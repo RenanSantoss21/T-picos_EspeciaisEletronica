@@ -1,0 +1,216 @@
+{
+  "id": 2,
+  "nome": "Dados I-MR (dados2.json)",
+  "tipo_carta": "IMR",
+  "criado_em": "2026-06-24T13:44:59.884354",
+  "limites_controle": {
+    "LC_I": 74.8707,
+    "LSC_I": 77.0721,
+    "LIC_I": 72.6694,
+    "LC_MR": 0.8277,
+    "LSC_MR": 2.7041,
+    "LIC_MR": 0
+  },
+  "amostras": [
+    {
+      "ponto_x": 73.88,
+      "ponto_mr": null,
+      "data_coleta": "2026-06-01T09:00:00"
+    },
+    {
+      "ponto_x": 75.03,
+      "ponto_mr": 1.15,
+      "data_coleta": "2026-06-01T10:00:00"
+    },
+    {
+      "ponto_x": 75.27,
+      "ponto_mr": 0.24,
+      "data_coleta": "2026-06-01T11:00:00"
+    },
+    {
+      "ponto_x": 75.44,
+      "ponto_mr": 0.17,
+      "data_coleta": "2026-06-01T12:00:00"
+    },
+    {
+      "ponto_x": 74.35,
+      "ponto_mr": 1.09,
+      "data_coleta": "2026-06-01T13:00:00"
+    },
+    {
+      "ponto_x": 75.21,
+      "ponto_mr": 0.86,
+      "data_coleta": "2026-06-01T14:00:00"
+    },
+    {
+      "ponto_x": 74.14,
+      "ponto_mr": 1.07,
+      "data_coleta": "2026-06-01T15:00:00"
+    },
+    {
+      "ponto_x": 74.63,
+      "ponto_mr": 0.49,
+      "data_coleta": "2026-06-01T16:00:00"
+    },
+    {
+      "ponto_x": 75.52,
+      "ponto_mr": 0.89,
+      "data_coleta": "2026-06-01T17:00:00"
+    },
+    {
+      "ponto_x": 74.34,
+      "ponto_mr": 1.18,
+      "data_coleta": "2026-06-01T18:00:00"
+    },
+    {
+      "ponto_x": 75.25,
+      "ponto_mr": 0.91,
+      "data_coleta": "2026-06-01T19:00:00"
+    },
+    {
+      "ponto_x": 75.29,
+      "ponto_mr": 0.04,
+      "data_coleta": "2026-06-01T20:00:00"
+    },
+    {
+      "ponto_x": 74.95,
+      "ponto_mr": 0.34,
+      "data_coleta": "2026-06-01T21:00:00"
+    },
+    {
+      "ponto_x": 78.21,
+      "ponto_mr": 3.26,
+      "data_coleta": "2026-06-01T22:00:00"
+    },
+    {
+      "ponto_x": 74.88,
+      "ponto_mr": 3.33,
+      "data_coleta": "2026-06-01T23:00:00"
+    },
+    {
+      "ponto_x": 75.61,
+      "ponto_mr": 0.73,
+      "data_coleta": "2026-06-02T00:00:00"
+    },
+    {
+      "ponto_x": 74.57,
+      "ponto_mr": 1.04,
+      "data_coleta": "2026-06-02T01:00:00"
+    },
+    {
+      "ponto_x": 75.48,
+      "ponto_mr": 0.91,
+      "data_coleta": "2026-06-02T02:00:00"
+    },
+    {
+      "ponto_x": 75.33,
+      "ponto_mr": 0.15,
+      "data_coleta": "2026-06-02T03:00:00"
+    },
+    {
+      "ponto_x": 74.61,
+      "ponto_mr": 0.72,
+      "data_coleta": "2026-06-02T04:00:00"
+    },
+    {
+      "ponto_x": 74.85,
+      "ponto_mr": 0.24,
+      "data_coleta": "2026-06-02T05:00:00"
+    },
+    {
+      "ponto_x": 74.59,
+      "ponto_mr": 0.26,
+      "data_coleta": "2026-06-02T06:00:00"
+    },
+    {
+      "ponto_x": 74.32,
+      "ponto_mr": 0.27,
+      "data_coleta": "2026-06-02T07:00:00"
+    },
+    {
+      "ponto_x": 75.34,
+      "ponto_mr": 1.02,
+      "data_coleta": "2026-06-02T08:00:00"
+    },
+    {
+      "ponto_x": 75.28,
+      "ponto_mr": 0.06,
+      "data_coleta": "2026-06-02T09:00:00"
+    },
+    {
+      "ponto_x": 74.44,
+      "ponto_mr": 0.84,
+      "data_coleta": "2026-06-02T10:00:00"
+    },
+    {
+      "ponto_x": 75.16,
+      "ponto_mr": 0.72,
+      "data_coleta": "2026-06-02T11:00:00"
+    },
+    {
+      "ponto_x": 74.62,
+      "ponto_mr": 0.54,
+      "data_coleta": "2026-06-02T12:00:00"
+    },
+    {
+      "ponto_x": 75.31,
+      "ponto_mr": 0.69,
+      "data_coleta": "2026-06-02T13:00:00"
+    },
+    {
+      "ponto_x": 74.88,
+      "ponto_mr": 0.43,
+      "data_coleta": "2026-06-02T14:00:00"
+    },
+    {
+      "ponto_x": 74.56,
+      "ponto_mr": 0.32,
+      "data_coleta": "2026-06-02T15:00:00"
+    },
+    {
+      "ponto_x": 74.34,
+      "ponto_mr": 0.22,
+      "data_coleta": "2026-06-02T16:00:00"
+    },
+    {
+      "ponto_x": 71.82,
+      "ponto_mr": 2.52,
+      "data_coleta": "2026-06-02T17:00:00"
+    },
+    {
+      "ponto_x": 75.26,
+      "ponto_mr": 3.44,
+      "data_coleta": "2026-06-02T18:00:00"
+    },
+    {
+      "ponto_x": 74.74,
+      "ponto_mr": 0.52,
+      "data_coleta": "2026-06-02T19:00:00"
+    },
+    {
+      "ponto_x": 75.18,
+      "ponto_mr": 0.44,
+      "data_coleta": "2026-06-02T20:00:00"
+    },
+    {
+      "ponto_x": 74.84,
+      "ponto_mr": 0.34,
+      "data_coleta": "2026-06-02T21:00:00"
+    },
+    {
+      "ponto_x": 74.77,
+      "ponto_mr": 0.07,
+      "data_coleta": "2026-06-02T22:00:00"
+    },
+    {
+      "ponto_x": 74.18,
+      "ponto_mr": 0.59,
+      "data_coleta": "2026-06-02T23:00:00"
+    },
+    {
+      "ponto_x": 74.36,
+      "ponto_mr": 0.18,
+      "data_coleta": "2026-06-03T00:00:00"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal — CEP Dashboard</title>
+    <meta name="description" content="Painel de Controle Estatístico de Processos — monitoramento de cartas X-R, I-MR, P e U.">
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+</head>
+<body>
+    <div class="page-header">
+        <div>
+            <h2>📊 Processos Monitorados</h2>
+            <p class="page-subtitle">Selecione um processo para visualizar sua carta de controle ou use a entrada manual.</p>
+        </div>
+    </div>
+
+    <div class="grid" id="processosGrid">
+        <!-- Card de Entrada Manual (sempre visível) -->
+        <a href="{% url 'json_input' %}" class="card card-json" id="cardJsonInput">
+            <div class="card-icon">📋</div>
+            <h3>Entrada Manual (JSON)</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 4px;">
+                Cole um payload JSON para gerar um dashboard sob demanda.
+            </p>
+        </a>
+    </div>
+
+    <script src="{% static 'app/js/index.js' %}"></script>
+</body>
+</html>

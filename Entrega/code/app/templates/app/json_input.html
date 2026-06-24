@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada Manual — CEP Dashboard</title>
+    <meta name="description" content="Entrada manual de dados JSON para geração de dashboards de Controle Estatístico de Processos.">
+    
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <p class="print-title">Relatório de Controle Estatístico de Processos</p>
+        <div class="header">
+            <h2>📋 Entrada Manual de Dados (JSON)</h2>
+            <div class="header-actions">
+                <button class="btn btn-export no-print" onclick="exportarRelatorio()" id="btnExport" style="display:none;">
+                    📄 Exportar Relatório
+                </button>
+                <a href="{% url 'index' %}" class="btn btn-back no-print">&larr; Voltar ao Menu</a>
+            </div>
+        </div>
+
+        <!-- Seção de Input JSON -->
+        <div class="json-input-section" id="inputSection">
+            <div class="alert-info">
+                💡 Cole o payload JSON do processo abaixo. O sistema validará os campos e gerará o dashboard automaticamente.
+            </div>
+
+            <label for="jsonInput">Payload JSON do Processo:</label>
+            <textarea 
+                id="jsonInput" 
+                class="json-textarea" 
+                placeholder='{
+  "nome": "Diâmetro de Rolamentos",
+  "tipo_carta": "XR",
+  "limites_controle": {
+    "LC_X": 50.0, "LSC_X": 51.2, "LIC_X": 48.8,
+    "LC_R": 1.5, "LSC_R": 3.4, "LIC_R": 0
+  },
+  "amostras": [
+    { "ponto_x": 50.1, "ponto_r": 1.2, "data_coleta": "2026-06-09T10:00:00" },
+    { "ponto_x": 49.8, "ponto_r": 0.9, "data_coleta": "2026-06-09T11:00:00" }
+  ]
+}'
+                spellcheck="false"
+            ></textarea>
+
+            <div class="json-actions">
+                <button class="btn btn-primary" onclick="processarJSON()" id="btnProcessar">
+                    🚀 Gerar Dashboard
+                </button>
+                <button class="btn btn-back" onclick="limparTudo()" id="btnLimpar">
+                    🗑️ Limpar
+                </button>
+            </div>
+
+            <div id="validationErrors"></div>
+        </div>
+
+        <!-- Resultado renderizado -->
+        <div id="renderResult"></div>
+    </div>
+
+    <script src="{% static 'app/js/chart_common.js' %}"></script>
+    <script src="{% static 'app/js/json_input.js' %}"></script>
+</body>
+</html>
