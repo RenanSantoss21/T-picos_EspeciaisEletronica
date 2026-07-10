@@ -21,6 +21,9 @@
                 <button class="btn btn-export" onclick="exportarRelatorio()" id="btnExport" style="display:none;">
                     📄 Exportar Relatório
                 </button>
+                <button class="btn" id="btnToggleLeds" onclick="toggleLeds()" style="background-color: #ff9800; color: white;">
+                    💡 Leds: Carregando...
+                </button>
                 <a href="{% url 'index' %}" class="btn btn-back">&larr; Voltar ao Menu</a>
             </div>
         </div>
@@ -31,5 +34,40 @@
 
     <script src="{% static 'app/js/chart_common.js' %}"></script>
     <script src="{% static 'app/js/dashboard.js' %}"></script>
+    <script>
+        // Lógica do botão de LEDs
+        const btnLeds = document.getElementById('btnToggleLeds');
+
+        function updateBtnLeds(state) {
+            if (state) {
+                btnLeds.innerHTML = "💡 Alertas LEDs: ON";
+                btnLeds.style.backgroundColor = "#4CAF50";
+            } else {
+                btnLeds.innerHTML = "💡 Alertas LEDs: OFF";
+                btnLeds.style.backgroundColor = "#f44336";
+            }
+        }
+
+        function carregarLeds() {
+            fetch('/api/toggle-leds/')
+                .then(r => r.json())
+                .then(data => updateBtnLeds(data.leds_on))
+                .catch(e => console.error(e));
+        }
+
+        function toggleLeds() {
+            btnLeds.innerHTML = "Aguarde...";
+            fetch('/api/toggle-leds/', { method: 'POST' })
+                .then(r => r.json())
+                .then(data => updateBtnLeds(data.leds_on))
+                .catch(e => {
+                    console.error(e);
+                    alert("Erro ao alterar LEDs");
+                });
+        }
+
+        // Carrega o estado atual assim que a página abrir
+        document.addEventListener('DOMContentLoaded', carregarLeds);
+    </script>
 </body>
 </html>

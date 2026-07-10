@@ -1,5 +1,9 @@
 CLAUDE.md
 CONTEXT.md
+iniciar_localtunnel.bat
+.pytest_cache
+.vscode
+__pycache__
 
 .agents
 .venv

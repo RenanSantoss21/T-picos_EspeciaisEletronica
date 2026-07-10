@@ -8,6 +8,7 @@ from .views import (
     dashboardView,
     IndexView,
     JsonInputView,
+    ToggleLedsView,
 )
 
 router = DefaultRouter()
@@ -20,5 +21,6 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('dashboard/<int:pk>/', dashboardView.as_view(), name='dashboard'),
     path('json-input/', JsonInputView.as_view(), name='json_input'),
+    path('api/toggle-leds/', ToggleLedsView.as_view(), name='toggle_leds'),
     path('', IndexView.as_view(), name='index'),
 ]

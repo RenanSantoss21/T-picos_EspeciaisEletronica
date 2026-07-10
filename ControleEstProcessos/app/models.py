@@ -4,6 +4,12 @@ from .cartas import CartaU, CartaXR, CartaP, CartaIMR
 import math
 
 
+class Configuracao(models.Model):
+    alertas_led_ligados = models.BooleanField(default=True, help_text="Se verdadeiro, o ESP32 acenderá os LEDs nos alertas")
+
+    def __str__(self):
+        return f"Configuração Geral (LEDs: {'Ligados' if self.alertas_led_ligados else 'Desligados'})"
+
 class Processo(models.Model):
     TIPO_CARTA_CHOICES = [
         ('XR', 'X-R'),

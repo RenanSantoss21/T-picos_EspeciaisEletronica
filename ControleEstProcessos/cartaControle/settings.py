@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-5e6mrnak1=&m43&+h-*0^-&ue-q^=l_-%&zarf*yw9!$y2hf89
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok-free.app']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok-free.app', '.ngrok-free.dev', '192.168.0.93', '*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
     'app',
 ]
 
@@ -72,6 +74,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'cartaControle.wsgi.application'
+ASGI_APPLICATION = 'cartaControle.asgi.application'
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
 
 
 # Database
@@ -136,5 +145,5 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
 ]
-CORS_ALLOW_ALL_ORIGINS = False  # Em produção, manter False
+CORS_ALLOW_ALL_ORIGINS = True  # Para facilitar o teste com Localtunnel
 # Para Ngrok, adicionar a URL gerada em CORS_ALLOWED_ORIGINS

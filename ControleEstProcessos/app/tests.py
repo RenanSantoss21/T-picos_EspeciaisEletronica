@@ -131,3 +131,40 @@ class TestMotorAlertasWestern(TestCase):
         
         alertas = carta._avaliar_regras_western(amostras, lc=10, sigma=1)
         self.assertTrue(any(a['regra'] == 4 and a['amostra_index'] == 10 for a in alertas))
+
+import pytest
+from channels.testing import WebsocketCommunicator
+from cartaControle.asgi import application
+from app.models import Configuracao
+
+@pytest.mark.asyncio
+@pytest.mark.django_db
+class TestDashboardWebsockets:
+    async def test_telemetria_broadcasts_to_group(self):
+        # 1. Configura um websocket "frontend" que apenas escuta
+        communicator = WebsocketCommunicator(application, "/ws/telemetria/")
+        connected, subprotocol = await communicator.connect()
+        assert connected
+
+        # 2. Configura um mock de ESP32 que envia dados
+        esp32_communicator = WebsocketCommunicator(application, "/ws/telemetria/")
+        connected_esp, _ = await esp32_communicator.connect()
+        assert connected_esp
+
+        # 3. O ESP32 envia telemetria
+        await esp32_communicator.send_json_to({
+            "temperature": 25.0,
+            "humidity": 50.0
+        })
+
+        # O ESP32 deve receber uma resposta com pattern
+        esp32_response = await esp32_communicator.receive_json_from()
+        assert "pattern" in esp32_response
+
+        # 4. O Frontend DEVE ter recebido um broadcast no grupo
+        # Isso vai FALHAR na fase RED, pois ainda não configuramos o group_send!
+        frontend_response = await communicator.receive_json_from()
+        assert frontend_response["type"] == "nova_amostra"
+
+        await communicator.disconnect()
+        await esp32_communicator.disconnect()
